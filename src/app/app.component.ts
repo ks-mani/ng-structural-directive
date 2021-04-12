@@ -8,6 +8,10 @@ import { Component, VERSION } from "@angular/core";
 export class AppComponent {
   name = "Angular " + VERSION.major;
 
+  trackByAge(index, item) {
+    return item.age;
+  }
+
   basicDetails = [
     {
       firstName: "Andrew",
