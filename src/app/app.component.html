@@ -1,5 +1,5 @@
 <!-- Native ngfor sugared usage, along with context variable -->
-<div
+<!-- <div
   *ngFor="let item of basicDetails; let i=index; let individual=$implicit;count as totalCount; first as first; last as last; even as even;">
   <p>Complete Object : {{individual | json}}</p>
   <p>Index : {{i+1}}</p>
@@ -10,4 +10,21 @@
   <p>{{first ? 'first': ''}}</p>
   <p>{{last ? 'last': ''}}</p>
   <hr />
-</div>
+</div> -->
+
+
+<!-- Native ngfor desugared usage, along with context variable -->
+<ng-template ngFor let-item [ngForOf]="basicDetails" let-i="index" let-individual="$implicit" let-totalCount="count"
+  let-first="first" let-last="last" let-even="even">
+  <div>
+    <p>Complete Object : {{individual | json}}</p>
+    <p>Index : {{i+1}}</p>
+    <p>Name : {{item.firstName}} {{item.lastName}}</p>
+    <span>Age : {{item.age}}</span>
+    <p>Total No. of Items : {{totalCount}}</p>
+    <p>{{even ? 'even': 'odd'}}</p>
+    <p>{{first ? 'first': ''}}</p>
+    <p>{{last ? 'last': ''}}</p>
+    <hr />
+  </div>
+</ng-template>
