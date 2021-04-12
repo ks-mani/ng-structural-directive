@@ -1,4 +1,6 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div *ngFor="let item of basicDetails; let i=index">
+  <p>{{i+1}}</p>
+  <p>{{item.firstName}} {{item.lastName}}</p>
+  <span>{{item.age}}</span>
+  <hr />
+</div>

@@ -8,7 +8,7 @@ import { Component, VERSION } from "@angular/core";
 export class AppComponent {
   name = "Angular " + VERSION.major;
 
-  protected basicDetails = [
+  basicDetails = [
     {
       firstName: "Andrew",
       lastName: "Garfield",
