@@ -14,7 +14,7 @@
 
 
 <!-- Native ngfor desugared usage, along with context variable -->
-<ng-template ngFor let-item [ngForOf]="basicDetails" let-i="index" let-individual="$implicit" let-totalCount="count"
+<!-- <ng-template ngFor let-item [ngForOf]="basicDetails" let-i="index" let-individual="$implicit" let-totalCount="count"
   let-first="first" let-last="last" let-even="even" [ngForTrackBy]="trackByAge">
   <div>
     <p>Complete Object : {{individual | json}}</p>
@@ -26,5 +26,12 @@
     <p>{{first ? 'first': ''}}</p>
     <p>{{last ? 'last': ''}}</p>
     <hr />
+  </div>
+</ng-template> -->
+
+<ng-template [myFor]="basicDetails" let-item>
+  <div>
+    <p>Name : {{item.firstName}} {{item.lastName}}</p>
+    <span>Age : {{item.age}}</span>
   </div>
 </ng-template>
