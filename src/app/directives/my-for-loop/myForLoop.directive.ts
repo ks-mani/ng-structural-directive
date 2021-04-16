@@ -14,8 +14,11 @@ export class MyForLoop {
     if (!Array.isArray(data)) {
     }
     this.viewRef.clear();
-    for (let item of data) {
-      this.viewRef.createEmbeddedView(this.tRef, { $implicit: item });
+    for (let i = 0; i < data.length; i++) {
+      this.viewRef.createEmbeddedView(this.tRef, {
+        $implicit: data[i],
+        index: i
+      });
     }
   }
 }
