@@ -38,9 +38,18 @@
   </div>
 </ng-template> -->
 
-<div *myFor="let item of basicDetails; let i=index">
+<!-- <div *myFor="let item of basicDetails; let i=index">
   <p>{{i}}</p>
   <p>Name : {{item.firstName}} {{item.lastName}}</p>
   <span>Age : {{item.age}}</span>
   <hr />
-</div>
+</div> -->
+
+<ng-template myFor [myForOf]="basicDetails" let-item let-i="index">
+  <div>
+    <p>{{i}}</p>
+    <p>Name : {{item.firstName}} {{item.lastName}}</p>
+    <span>Age : {{item.age}}</span>
+    <hr />
+  </div>
+</ng-template>
