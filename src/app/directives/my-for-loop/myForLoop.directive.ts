@@ -1,7 +1,7 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from "@angular/core";
 
 @Directive({
-  selector: "[myFor]"
+  selector: "[myFor][myForOf]"
 })
 export class MyForLoop {
   constructor(
@@ -9,7 +9,7 @@ export class MyForLoop {
     private viewRef: ViewContainerRef
   ) {}
 
-  @Input("myFor")
+  @Input("myForOf")
   set myForData(data: any) {
     if (!Array.isArray(data)) {
     }
